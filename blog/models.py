@@ -28,7 +28,7 @@ class Post(models.Model):
     title = models.CharField(max_length=75)
     slug = models.CharField(max_length=75)
     content = models.TextField()
-    author = models.ForeignKey(User, unique=True)
+    author = models.ForeignKey(User)
     post_date = models.DateTimeField(default=datetime.now)
     status = models.CharField(max_length=1, choices=POST_STATUS)
     categories = models.ManyToManyField(Category)
